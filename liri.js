@@ -14,15 +14,16 @@ switch(params[0]) {
   case "spotify-this-song":
     if(params[1]){  //if a song is put named in 4th paramater go to function
     spotifyIt();
-  } else {
+  } else {  //if blank call it blink 182's "whats my age again"
     spotifyIt("What\'s my age again");
-    break;
   }
+    break;
+  
   
 }
 
 function myTweets(){
-   var client = new Twitter({
+   var client = new Twitter({  //from api docs, to get keys
       consumer_key: keys.twitterKeys.consumer_key,
       consumer_secret: keys.twitterKeys.consumer_secret,
       access_token_key: keys.twitterKeys.access_token_key,
@@ -35,17 +36,17 @@ function myTweets(){
       
       var tweetResults = data[i].text + "\n";
       
-      console.log(tweetResults);
+      console.log(tweetResults); //displays last 20 tweets
       
       };
   });
 }  
 
-function spotifyIt(song) {
-  spotify.search({ type: 'track', query: song }, function(err, data) {
+function spotifyIt() {
+  spotify.search({ type: 'track', query: params[1] }, function(err, data) {
     if ( err ) {
         console.log('Error occurred: ' + err);
-        return;
+        return;  //from spotify npm docs
     }
     else{
     var songInfo = data.tracks.items[0];
