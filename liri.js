@@ -12,8 +12,12 @@ switch(params[0]) {
     myTweets();
     break;
   case "spotify-this-song":
+    if(params[1]){  //if a song is put named in 4th paramater go to function
     spotifyIt();
+  } else {
+    spotifyIt("What\'s my age again");
     break;
+  }
   
 }
 
@@ -37,6 +41,21 @@ function myTweets(){
   });
 }  
 
-function spotifyIt(){}
+function spotifyIt(arg) {
+  spotify.search({ type: 'track', query: arg }, function(err, data) {
+    if ( err ) {
+        console.log('Error occurred: ' + err);
+        return;
+    }
+    else{
+    var songInfo = data.tracks.items[0];
+    var songResult = console.log(songInfo.artists[0].name)
+                     console.log(songInfo.name)
+                     console.log(songInfo.album.name)
+                     console.log(songInfo.preview_url)
+    console.log(songResult);
+    };
+  });
+}  
 
 
