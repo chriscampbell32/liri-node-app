@@ -41,8 +41,8 @@ function myTweets(){
   });
 }  
 
-function spotifyIt(arg) {
-  spotify.search({ type: 'track', query: arg }, function(err, data) {
+function spotifyIt(song) {
+  spotify.search({ type: 'track', query: song }, function(err, data) {
     if ( err ) {
         console.log('Error occurred: ' + err);
         return;
