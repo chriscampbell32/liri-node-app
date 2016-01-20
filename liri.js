@@ -11,6 +11,9 @@ switch(params[0]) {
   case "my-tweets":
     myTweets();
     break;
+  case "spotify-this-song":
+    spotifyIt();
+    break;
   
 }
 
@@ -34,6 +37,6 @@ function myTweets(){
   });
 }  
 
-
+function spotifyIt(){}
 
 
