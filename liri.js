@@ -18,6 +18,13 @@ switch(params[0]) {
     spotifyIt("What\'s my age again");
   }
     break;
+  case "movie-this":
+    if(params[1]){
+      findMovie();
+    } else {
+      findMovie("Mr. Nobody")
+    }
+      break;
   
   
 }
