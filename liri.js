@@ -3,7 +3,7 @@ var Twitter = require('twitter');
 var spotify = require("spotify");
 var fs = require("fs");
 var request = require('request');
-
+//process argv slice to get to the paramters we want for switch statement
 var params = process.argv.slice(2);
 
 
@@ -22,8 +22,11 @@ switch(params[0]) {
     if(params[1]){
       findMovie();
     } else {
-      findMovie(params[1] = "Mr. Nobody");
+      findMovie(params[1] = "Mr. Nobody"); //if blank, show info on the movie mr.nobody
     }
+      break;
+    case "do-what-it-says":
+      spotifyIt(params[1] = "I want it that way");
       break;
   
   
