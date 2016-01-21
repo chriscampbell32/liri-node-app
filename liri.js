@@ -22,7 +22,7 @@ switch(params[0]) {
     if(params[1]){
       findMovie();
     } else {
-      findMovie("Mr. Nobody")
+      findMovie(params[1] = "Mr. Nobody");
     }
       break;
   
