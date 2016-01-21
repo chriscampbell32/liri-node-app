@@ -12,10 +12,10 @@ switch(params[0]) {
     myTweets();
     break;
   case "spotify-this-song":
-    if(params[1]){  //if a song is put named in 4th paramater go to function
+   if(params[1]){  //if a song is put named in 4th paramater go to function
     spotifyIt();
-  } else {  //if blank call it blink 182's "whats my age again"
-    spotifyIt("What\'s my age again");
+  } else  {  //if blank call it blink 182's "whats my age again"
+    spotifyIt(params[1] = "Whats my age again");
   }
     break;
   case "movie-this":
@@ -57,13 +57,27 @@ function spotifyIt() {
     }
     else{
     var songInfo = data.tracks.items[0];
-    var songResult = console.log(songInfo.artists[0].name)
-                     console.log(songInfo.name)
-                     console.log(songInfo.album.name)
-                     console.log(songInfo.preview_url)
+    var songResult = console.log("the artist is", songInfo.artists[0].name)
+                     console.log("the song name is", songInfo.name)
+                     console.log("the album is called", songInfo.album.name)
+                     console.log("here is a preview link", songInfo.preview_url)
     console.log(songResult);
     };
   });
 }  
+
+function findMovie() {
+  request("http://www.omdbapi.com/?t=" + params[1] + "&y=&plot=short&r=json", function(error, response, body){
+    var movieObject = JSON.parse(body);
+    console.log("the title is", movieObject.Title)
+    console.log("the year is", movieObject.Year)
+    console.log("the IMDB Rating is", movieObject.imdbRating)
+    console.log("the country is", movieObject.Country)
+    console.log("the language is", movieObject.Language)
+    console.log("the plot is", movieObject.Plot)
+    console.log("the actors are", movieObject.Actors)
+  });
+};
+
 
 
