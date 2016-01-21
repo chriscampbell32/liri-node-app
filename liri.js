@@ -60,11 +60,11 @@ function spotifyIt() {
     }
     else{
     var songInfo = data.tracks.items[0];
-    var songResult = console.log("the artist is", songInfo.artists[0].name)
-                     console.log("the song name is", songInfo.name)
-                     console.log("the album is called", songInfo.album.name)
-                     console.log("here is a preview link", songInfo.preview_url)
-    console.log(songResult);
+    console.log("the artist is", songInfo.artists[0].name)
+    console.log("the song name is", songInfo.name)
+    console.log("the album is called", songInfo.album.name)
+    console.log("here is a preview link", songInfo.preview_url)
+    
     };
   });
 }  
