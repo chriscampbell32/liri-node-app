@@ -25,7 +25,7 @@ switch(params[0]) {
       findMovie(params[1] = "Mr. Nobody"); //if blank, show info on the movie mr.nobody
     }
       break;
-    case "do-what-it-says":
+    case "do-what-it-says":  
       spotifyIt(params[1] = "I want it that way");
       break;
   
@@ -83,4 +83,4 @@ function findMovie() {
 };
 
 
-
+//make function for do-what-it-says... instead of shortcut version i have in switch case  on line 28
